@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Contract
@@ -10,7 +10,7 @@ dataSources:
       abi: Contract
       startBlock: 33995089
     mapping:
-      kind: ethereum/events 
+      kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
@@ -18,10 +18,10 @@ dataSources:
         - Transfer
       abis:
         - name: Contract
-          file: ./abis/Contract.json
+          file: Contract\abis\Contract.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,uint256)
           handler: handleApproval
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/contract.ts
+      file: Contract\Contract.wasm
